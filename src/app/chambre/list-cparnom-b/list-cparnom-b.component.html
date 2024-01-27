@@ -1,0 +1,79 @@
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+  rel="stylesheet"
+/>
+<section class="vh-100 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-10">
+  
+          <div class="card mask-custom">
+            <div class="card-body p-4 text-black">
+  
+              <div class="text-center pt-3 pb-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                  alt="Check" width="60">
+                <h2 class="my-4">liste des chambres</h2>
+              </div>
+  
+              <table class="table text-black mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">numeroChambre</th>
+                    <th scope="col">Type Chambre</th>
+                    <th scope="col">Bloc</th>
+                   <!--  <th scope="col">les reservations</th>  -->
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let ch of chambres">
+                  <tr class="fw-normal">
+                    <th>
+                     
+                      <span class="ms-2">{{ch.numeroChambre}}</span>
+                    </th>
+                    <td class="align-middle">
+                      <span>{{ch.typeC}}</span>
+                    </td>
+                    <td class="align-middle">
+                      <span>{{ch.b ? ch.b.idBloc : 'Undefined'}}</span>
+                    </td>
+                 <!--    <td class="align-middle">
+                        <h6 class="mb-0"><a class="badge bg-warning" href="#!" >{{ch.res}}</a></h6>
+                      </td>  -->
+                    <td class="align-middle">
+                       
+                          <a  data-mdb-toggle="tooltip" [routerLink]="['editchambre', ch.idChambre]"><i
+                            class="fas fa-pencil-alt fa-lg text-warning  me-3"></i></a>
+                    
+                    </td>
+              
+                </tbody>
+              </table>
+  
+  
+            </div>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-warning" type="button"  routerLink="addchambre">ajouter chambre</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+></script>

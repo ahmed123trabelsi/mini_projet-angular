@@ -1,0 +1,91 @@
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+  rel="stylesheet"
+/>
+<section class="vh-50 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-10">
+  
+          <div class="card mask-custom">
+            <div class="card-body p-4 text-black">
+  
+              <div class="text-center pt-3 pb-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                  alt="Check" width="60">
+                <h2 class="my-4">liste des Blocs</h2>
+              </div>
+  
+              <table class="table text-black mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">nomBloc</th>
+                    <th scope="col">capacite de bloc</th>
+             
+                   <!--  <th scope="col">les reservations</th>  -->
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let b of blocs">
+                  <tr class="fw-normal">
+                    <th>
+                     
+                      <a class="ms-2" [routerLink]="['listeChambres', b.nomBloc]">{{ b.nomBloc }}</a>
+                    </th>
+                    <td class="align-middle">
+                      <span>{{b.capciteBloc}}</span>
+                    </td>
+                
+                 <!--    <td class="align-middle">
+                        <h6 class="mb-0"><a class="badge bg-warning" href="#!" >{{ch.res}}</a></h6>
+                      </td>  -->
+                    <td class="align-middle">
+                       
+                          <a  data-mdb-toggle="tooltip" [routerLink]=""><i
+                            class="fas fa-pencil-alt fa-lg text-warning  me-3"></i></a>
+                            <a  data-mdb-toggle="tooltip" (click)="delete(b.idBloc)"><i
+                              class="fas fa-trash-alt fa-lg text-warning  me-3"></i></a>
+                    </td>
+              
+                </tbody>
+              </table>
+  
+  
+            </div>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-warning" type="button"  routerLink="addbloc">ajouter bloc</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  <!-- MDB -->
+  <section class="vh-50">
+  <div>
+    <label for="numChambers">Numéros de chambre (séparés par des virgules) :</label>
+    <input type="text" id="numChambers" [(ngModel)]="numChambersInput" placeholder="1, 2, 3">
+  </div>
+  <div>
+    <label for="nomBloc">Nom du bloc :</label>
+    <input type="text" id="nomBloc" [(ngModel)]="nomBlocInput" placeholder="NomDuBloc">
+  </div>
+  <button (click)="affecterChambres()">Affecter chambres au bloc</button>
+</section>
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+></script>
+

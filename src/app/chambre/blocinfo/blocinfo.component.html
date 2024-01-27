@@ -1,0 +1,16 @@
+<div class="bloc-details" *ngIf="b">
+    <div class="card">
+      <div class="card-header">
+        <h6 class="m-0 font-weight-bold">bloc Details</h6>
+      </div>
+      <div class="card-body">
+        <p>ID: {{ b.idBloc }}</p>
+        <p>Name: {{ b.nomBloc }}</p>
+        <p>Capacite: {{ b.capciteBloc}}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bloc-details" *ngIf="!b ">
+    <p>No bloc available.</p>
+  </div>

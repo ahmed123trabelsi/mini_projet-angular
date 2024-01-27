@@ -1,0 +1,17 @@
+{
+  "reservations": [
+    {
+      "id": 1,
+      "idReservation": "1111111-B-11",
+      "anneeUniversitaire": "2023-11-20",
+      "estValide": true
+    }
+  ],
+  "chambres": [
+    {
+      "id": 1,
+      "numeroChambre": "1014",
+      "TypeChambre": "DOUBLE"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+  rel="stylesheet"
+/>
+<section class="vh-100 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-10">
+  
+          <div class="card mask-custom">
+            <div class="card-body p-4 text-white">
+  
+              <div class="text-center pt-3 pb-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                  alt="Check" width="60">
+                <h2 class="my-4">liste des reservations</h2>
+              </div>
+  
+              <table class="table text-white mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">idReservation</th>
+                    <th scope="col">debut</th>
+                    <th scope="col">fin</th>
+                    <th scope="col">estValide</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let res of reservations">
+                  <tr class="fw-normal">
+                    <th>
+                      <span class="ms-2">{{res.idReservation}}</span>
+                    </th>
+                    <td class="align-middle">
+                      <span>{{res.dateDebut}}</span>
+                    </td>
+                    <td class="align-middle">
+                      <span>{{res.dateFin}}</span>
+                    </td>
+                    <td class="align-middle">
+                      <h6 class="mb-0"><span [ngClass]="{'badge bg-danger': !res.estValide, 'badge bg-success': res.estValide}">{{res.estValide}}</span></h6>
+                    </td>
+                    <td class="align-middle">
+                        <a href="#!" data-mdb-toggle="tooltip" title="edit"><i
+                            class="fas fa-pencil-alt fa-lg text-warning  me-3"></i></a>
+                      <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
+                          class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                    </td>
+                  </tr>
+              </tbody>
+              </table>
+          
+            </div>
+         
+          </div>
+          <div class="d-grid gap-2"  >
+    
+            <button class="btn btn-warning" type="button"  routerLink="addres"  >ajouter ou annuler reservation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+></script>
